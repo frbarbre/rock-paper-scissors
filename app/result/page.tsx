@@ -27,7 +27,11 @@ export default function ResultPage() {
   const delay = 1;
 
   useEffect(() => {
-    if (sessionStorage.getItem("firstLoad") === FirstLoad.true) {
+
+    let firstLoad
+    firstLoad = localStorage.getItem("firstLoad") as FirstLoad || ""
+
+    if (firstLoad === FirstLoad.true) {
       setTimeout(() => {
         setIsActive(true);
       }, delay * 1000);
@@ -37,7 +41,10 @@ export default function ResultPage() {
   }, []);
 
   useEffect(() => {
-    if (sessionStorage.getItem("firstLoad") === FirstLoad.true) {
+    let firstLoad
+    firstLoad = localStorage.getItem("firstLoad") as FirstLoad || ""
+
+    if (firstLoad === FirstLoad.true) {
       sessionStorage.setItem("firstLoad", FirstLoad.false);
       setTimeout(() => {
         if (result === Result.win) setScore(score + 1);
