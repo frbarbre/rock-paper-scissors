@@ -24,13 +24,13 @@ export default function ResultPage() {
   const [userIndex] = useState(userIndexFinder(userChoice));
   const [isActive, setIsActive] = useState(false);
 
+  let firstLoad: FirstLoad | null;
+  if (typeof window !== "undefined") {
+    firstLoad = (sessionStorage.getItem("firstLoad") as FirstLoad) || "";
+  }
   const delay = 1;
 
   useEffect(() => {
-
-    let firstLoad
-    firstLoad = localStorage.getItem("firstLoad") as FirstLoad || ""
-
     if (firstLoad === FirstLoad.true) {
       setTimeout(() => {
         setIsActive(true);
@@ -41,9 +41,6 @@ export default function ResultPage() {
   }, []);
 
   useEffect(() => {
-    let firstLoad
-    firstLoad = localStorage.getItem("firstLoad") as FirstLoad || ""
-
     if (firstLoad === FirstLoad.true) {
       sessionStorage.setItem("firstLoad", FirstLoad.false);
       setTimeout(() => {
