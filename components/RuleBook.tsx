@@ -12,7 +12,7 @@ export default function RuleBook({
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       exit={{ scale: 0 }}
-      className="absolute inset-0 flex items-center justify-center pointer-events-none"
+      className="absolute inset-0 flex items-center justify-center pointer-events-none z-[100]"
     >
       <div className="bg-white md:max-w-[400px] md:max-h-[461px] w-full h-full pointer-events-auto rounded-[8px] flex flex-col justify-between md:justify-start items-center pb-[66px] pt-[95px] md:p-[32px] md:pb-[47px] md:gap-[20px]">
         <m.div
