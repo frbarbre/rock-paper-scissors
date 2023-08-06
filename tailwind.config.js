@@ -40,8 +40,11 @@ module.exports = {
         xs: "0px 3px 3px 0px rgba(0, 0, 0, 0.20);",
       },
       screens: {
-        md: "1000px"
-      }
+        md: "1000px",
+      },
+      minHeight: {
+        screen: "100svh",
+      },
     },
   },
   plugins: [],
