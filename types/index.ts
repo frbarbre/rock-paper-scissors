@@ -3,7 +3,7 @@ export enum Choices {
   paper = "paper",
   scissors = "scissors",
   lizard = "lizard",
-  spock = "spock"
+  spock = "spock",
 }
 
 export enum Result {
@@ -14,8 +14,15 @@ export enum Result {
 
 export type Choice = "" | Choices;
 
+export type Index = null | number | "";
+
+export enum FirstLoad {
+  true = "yes",
+  false = "no"
+}
+
 export type Store = {
-  houseDecider: null | number;
+  houseDecider: Index;
   setHouseDecider: (houseDecider: null | number) => void;
   houseChoice: Choice;
   setHouseChoice: (houseChoice: Choice) => void;
